@@ -1,3 +1,3 @@
 # jmbujold.github.io
 Homepage
-<a href="golf.html">golf game</a>
+<a href="golf-game/golf.html">golf game</a>
