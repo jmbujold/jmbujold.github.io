@@ -1,0 +1,53 @@
+button{
+  background-color: #E1E2DF;
+  color: #374043;
+  font-family: sans-serif;
+  font-size:20px;
+  margin: 15px;
+  padding: 20px 0;
+  text-align: center;
+  border: 2px solid #374043;
+  width: 150px;
+  height: 75px;
+    display:inline-block;
+    }
+button:hover{
+    color:white;
+    border: 2px solid #374043;
+    background-color: #374043;
+    font-weight: bold;
+
+    }
+#result{
+    font-family: monospace;
+    }
+#prompt{
+    font-family: monospace; 
+    height:50px;
+    width 300px;
+    text-align: center;
+    color: #222E50;
+    font-size: 22px;
+    }
+#area{
+    margin-top: 50px;
+    background-position: 200px 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #111D13;
+    height: 400px;
+    background-color: rgba(230, 230, 230, 0.5);
+    }
+#questions{
+  padding: 20px 0;
+  width: 100%;
+    }
+body{
+    text-align: center;
+    background-image: url("course.jpg");
+    background-size: 2500px,3000px;
+    background-position: center
+    }
+#ball{
+    font-size:40px;
+}
