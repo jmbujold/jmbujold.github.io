@@ -60,8 +60,14 @@ function recommendBall2() {
     //loop through the BallInfo list and display when the ball matches
     for(let i = 0; i < ballInfo.length; i++)
         if(likelyBall == ballInfo[i][0]){
-        document.getElementById("description").innerHTML = ballInfo[i][1];
-        document.getElementById("ballImg").src = ballInfo[i][2];
+        var image = document.createElement('img');
+        image.src = ballInfo[i][2];
+        image.style.height = "100px";
+        image.style.width = "100px";
+        var n = document.createElement('p')
+        n.innerHTML = ballInfo[i][1];
+        document.getElementById("description").appendChild(image);
+        document.getElementById("description").appendChild(n);
 
         }
 }
