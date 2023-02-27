@@ -15,8 +15,8 @@ const questions = [
     ["What is more important to you?", ["Price",1], ["Performance",40]],
     ["How many rounds of golf do you play each year?", ["Less than 5",1], ["5 - 20",10],["20+",20]],
     ["What is more important to you?", ["Distance",3], ["Feel / Spin",10]],
-    ["What is your gender?", ["Male",3], ["Female",7], ["Other / Prefer not to Answer",7]],
-    ["Does color matter?", ["Always White",3], ["Other Colors Are Fine",10]],
+    ["What is your gender?", ["Male",3], ["Female",7], ["Other",7]],
+    ["Does color matter?", ["Always White",3], ["Any Color",10]],
     ["What is your handicap?", ["<10",1], ["10-20",5],["20+",10],["UNSURE",20]],
 
 ]
@@ -57,8 +57,13 @@ function recommendBall2() {
     console.log(likelyBallDiff)
     document.getElementById("prompt").innerHTML = "we recommend:";
     document.getElementById("ball").innerHTML = likelyBall;
-    document.getElementById("description").innerHTML = "why this ball makes sense. Price. Description. Image";
+    //loop through the BallInfo list and display when the ball matches
+    for(let i = 0; i < ballInfo.length; i++)
+        if(likelyBall == ballInfo[i][0]){
+        document.getElementById("description").innerHTML = ballInfo[i][1];
+        document.getElementById("ballImg").src = ballInfo[i][2];
 
+        }
 }
 
 
@@ -86,24 +91,29 @@ function displayQuestions(value) {
         element.innerHTML = questions[q][i][0];
 	    foo.appendChild(element);
         document.getElementById("prompt").innerHTML = questions[q][0];
-
     }
     questionNum ++; 
     }
 }
    
 
-// [Ball Name, Accuracy, Age, Gender]
+// [Ball Name, Accuracy, Trajectory, Price/Performance, Rounds, Distance/Feel, Gender, Color, Age]
 // values align with the radio button values, abs difference squared calculates similarity
 const balls = [
-    ["Nike",1,30,11,1,3,3,3,3],
+    ["Nike",1,30,11,1,3,3,3,3,[]],
     ["Cut",5,24,5,1,3,3,3,3],
     ["Titleist",10,55,2,100,3,3,3,3],
     ["Callaway",11,25,3,100,3,3,3,3],
     ["Bridgestone",10,53,3,100,3,3,3,3],
     ["Taylormade",8,16,10,100,3,3,3,3],
 ]
-const ballInfo = [["Titleise","expensive","soft"]
-    
-    
+//Name, Description, Link
+const ballInfo = [
+ ["Nike", "This is a great ball, you'll love it", "https://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"],
+ ["Cut", "This is a great ball, you'll love it", "https://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"],
+ ["Titleist", "This is a great ball, you'll love it", "https://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"],
+ ["Callaway", "This is a great ball, you'll love it", "httTps://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"],
+ ["Bridgestone", "This is a great ball, you'll love it", "httTps://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"],
+ ["Taylormade", "This is a great ball, you'll love it", "httTps://upload.wikimedia.org/wikipedia/commons/c/c8/Two_golf_balls.jpg"]
+
 ]
